@@ -144,7 +144,7 @@ Gulp.task('packing', () => {
       // FIXME: gulp-rename の仕様により引数代入を許可する
       /* eslint-disable no-param-reassign */
       path.dirname = path.dirname.replace(/^(?:dist|docs)/, '');
-      path.dirname = `honoka/${path.dirname}`;
+      path.dirname = `rin/${path.dirname}`;
       /* eslint-enable no-param-reassign */
     }))
     .pipe(Plugins.zip(`bootstrap-${PackageJSON.config.packageName.toLowerCase()}-${PackageJSON.version}-dist.zip`))
