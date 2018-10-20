@@ -4,7 +4,7 @@
 @import "bootstrap/scss/functions";
 
 // Honoka variables
-@import "rin/variables";
+@import "honoka/variables";
 
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins";
@@ -45,5 +45,5 @@
 @import "bootstrap/scss/utilities";
 @import "bootstrap/scss/print";
 
-// rin original setting
-@import "rin/override";
+// honoka original setting
+@import "honoka/override";
