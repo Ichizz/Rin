@@ -34,7 +34,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "bootstrap": "4.0.0-alpha.5"
+    "bootstrap": "4.1.0"
   },
   "exportsOverride": {
     "bootstrap": {},

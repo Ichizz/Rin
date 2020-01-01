@@ -1,3 +1,4 @@
+@charset "UTF-8";
 // Variables
 //
 // Copy settings from this file into the provided `_custom.scss` to override
@@ -76,27 +77,21 @@ $enable-print-styles:       true !default;
 // variables. Mostly focused on spacing.
 // You can add more entries to the $spacers map, should you need more variation.
 
-$spacer:   1rem !default;
-$spacer-x: $spacer !default;
-$spacer-y: $spacer !default;
-$spacers: (
-	0: (
-		x: 0,
-		y: 0
-	),
-	1: (
-		x: $spacer-x,
-		y: $spacer-y
-	),
-	2: (
-		x: ($spacer-x * 1.5),
-		y: ($spacer-y * 1.5)
-	),
-	3: (
-		x: ($spacer-x * 3),
-		y: ($spacer-y * 3)
-	)
-) !default;
+$spacer: 1rem !default;
+$spacers: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3)
+  ),
+  $spacers
+);
+
 $border-width: 1px !default;
 
 
@@ -124,12 +119,13 @@ $link-hover-decoration: underline !default;
 // adapting to different screen sizes, for use in media queries.
 
 $grid-breakpoints: (
-	xs: 0,
-	sm: 576px,
-	md: 768px,
-	lg: 992px,
-	xl: 1200px
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
 ) !default;
+
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 
 
@@ -138,11 +134,12 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-	sm: 540px,
-	md: 720px,
-	lg: 960px,
-	xl: 1140px
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
 ) !default;
+
 @include _assert-ascending($container-max-widths, "$container-max-widths");
 
 
@@ -351,7 +348,7 @@ $input-height:                   (($font-size-base * $line-height-base) + ($inpu
 $input-height-lg:                (($font-size-lg * $line-height-lg) + ($input-padding-y-lg * 2)) !default;
 $input-height-sm:                (($font-size-sm * $line-height-sm) + ($input-padding-y-sm * 2)) !default;
 
-$form-group-margin-bottom:       $spacer-y !default;
+$form-group-margin-bottom:       $spacer !default;
 
 $input-group-addon-bg:           $gray-lighter !default;
 $input-group-addon-border-color: $input-border-color !default;
@@ -428,12 +425,8 @@ $custom-file-box-shadow:    inset 0 .2rem .4rem rgba(0,0,0,.05) !default;
 $custom-file-button-color:  $custom-file-color !default;
 $custom-file-button-bg:     #eee !default;
 $custom-file-text: (
-	placeholder: (
-		en: "Choose file..."
-	),
-	button-label: (
-		en: "Browse"
-	)
+  en: "Browse",
+  ja: "選択",
 ) !default;
 
 
