@@ -154,6 +154,10 @@ Gulp.task('docs:serve', () => {
   });
 });
 
+Gulp.task('docs:reload', () => {
+  BrowserSync.reload();
+});
+
 Gulp.task('watch', () => {
   const message = (filePath) => {
     console.log(`File: ${filePath} was changed, running tasks...`);
@@ -171,7 +175,7 @@ Gulp.task('docs', Gulp.series(
   'docs:clean', 'docs:copy', 'docs:css',
 ));
 
-Gulp.task('serve', Gulp.series(
+Gulp.task('serve', Gulp.parallel(
   'docs:serve', 'watch',
 ));
 
