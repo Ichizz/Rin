@@ -89,7 +89,7 @@ honoka/
 
 [MIT License](LICENSE)
 
-## Author
+## Author of "Rin"
 
 * Hagihara Ryosuke ([@raryosu](https://twitter.com/raryosu))
 

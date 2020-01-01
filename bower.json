@@ -11,7 +11,8 @@
     "front-end",
     "framework",
     "web",
-    "lovelive"
+    "lovelive",
+    "honoka"
   ],
   "author": "Hagihara Ryosuke",
   "homepage": "https://rinhoshizo.la/",
@@ -35,5 +36,10 @@
   "dependencies": {},
   "devDependencies": {
     "bootstrap": "4.1.0"
+  },
+  "exportsOverride": {
+    "bootstrap": {},
+    "jquery": {},
+    "tether": {}
   }
 }
