@@ -1,19 +1,19 @@
 # Rin
 
-[![Build Status by Travis CI](https://travis-ci.org/raryosu/Rin.svg?branch=v4-dev)](https://travis-ci.org/raryosu/Rin)
+[![Build Status by Travis CI](https://travis-ci.com/Ichizz/Rin.svg?branch=v4.3.1)](https://travis-ci.org/Ichizz/Rin)
 [![Build status by AppVeyor](https://ci.appveyor.com/api/projects/status/kly8aqr2ovqwg92p/branch/v4-dev?svg=true)](https://ci.appveyor.com/project/raryosu/rin/branch/master)
-[![devDependency Status](https://david-dm.org/raryosu/Rin/dev-status.svg)](https://david-dm.org/raryosu/Rin#info=devDependencies)
+[![devDependency Status](https://david-dm.org/Ichizz/Rin.svg)](https://david-dm.org/Ichizz/Rin#info=devDependencies)
 [![The MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 [http://v4-alpha.rinhoshizo.la/](https://v4-alpha.rinhoshizo.la/)
 
 [![Rin](docs/assets/img/sample.png)](http://rinhoshizo.la/)
 
-"Rin" は "Honoka" を元にした日本語も美しく表示できるBootstrapテーマです。
+"Rin" は "Honoka" を元にした日本語も美しく表示できる Bootstrap テーマです。
 
 ## About "Rin"
 
-通常の[Bootstrap](http://getbootstrap.com/)では、日本語のフォント指定や文字サイズは最適とはいえません。"Honoka"はそんなBootstrapをベースに，日本語表示に適したフォント指定や，文字サイズに関するコードを追記したBootstrapテーマの一つです。
+通常の [Bootstrap](http://getbootstrap.com/) では、日本語の表示が最適であるとはいえません。 "Rin" では Bootstrap をベースに、日本語表示に適したフォントの指定や、ウェイトに関するコードを追記した Bootstrap テーマです。
 
 ## Live Demo
 
@@ -23,7 +23,7 @@
 
 ### Download
 
-[Releases](https://github.com/raryosu/Rin/releases)から最新版をダウンロードしてください。
+[Releases](https://github.com/Ichizz/Rin/releases) ページから最新版をダウンロードしてください。
 
 ### Bower
 
@@ -41,11 +41,11 @@ bower install --save-dev $(node -e "$(curl -fsSL https://cdn.honokak.osaka/last.
 bower install --save-dev Rin#(version)
 ```
 
-``(version)``にはバージョン番号を指定します(ex. ``Rin#3.3.6-3``)。Rinの最新バージョン番号は[Releases](https://github.com/raryosu/Rin/releases)から確認してください。
+``(version)`` には Honoka のバージョン番号を指定します(ex. ``Rin#.4.1-1``)。Rinの最新バージョン番号は[Releases](https://github.com/Ichizz/Rin/releases) ページから確認してください。
 
 ## Usage
 
-Rinは単なるBootstrapテーマにしか過ぎないため，基本的な使い方は本家Bootstrapとほとんど変わりません。よって以下に書くことは[本家Bootstrap](http://getbootstrap.com/getting-started/)からの引用，もしくはその一部を変更したものです。用意されたCSSクラスやコンポーネントなど，より詳細な使い方のドキュメントは本家Bootstrapの各種リファレンスページをご覧になることを推奨します。
+Rinは単なるBootstrap のテーマにしか過ぎないため、基本的な使い方は本家Bootstrapとほとんど変わりません。よって以下に書くことは[本家Bootstrap](http://getbootstrap.com/getting-started/)からの引用，もしくはその一部を変更したものです。用意されたCSSクラスやコンポーネントなど，より詳細な使い方のドキュメントは本家Bootstrapの各種リファレンスページをご覧になることを推奨します。
 
  * [CSS](http://getbootstrap.com/css/)
  * [Components](http://getbootstrap.com/components/)
@@ -53,23 +53,21 @@ Rinは単なるBootstrapテーマにしか過ぎないため，基本的な使�
 
 ### Package
 
-配布しているzipファイルの内容物は以下のとおりです。``bootstrap.min.*``といったように，ファイル名に``min``がつくファイルは，改行やインデント・スペーシングをなくした(minifyされた)コードで，ユーザがウェブページを読み込む際の転送量を少なくすることができます。通常はこの``bootstrap.min.*``を使うことをおすすめします。
+配布している ZIP ファイルの内容物は以下のとおりです。 `bootstrap.min.css` といったように、ファイル名に `min` がついているファイルは、改行やインデント・スペーシングをなくした(minifyされた)コードで、ユーザがウェブページを読み込む際の転送量を少なくすることができます。通常はこの `bootstrap.min.*` を使うことをおすすめします。
 
 ```
 honoka/
+├─ LICENSE
+├─ README.md
 ├─ bootstrap.html
 ├─ css/
-│   ├─ bootstrap.css
-│   └─ bootstrap.min.css
-├─ fonts/
-│   ├─ glyphicons-halflings-regular.eot
-│   ├─ glyphicons-halflings-regular.svg
-│   ├─ glyphicons-halflings-regular.ttf
-│   ├─ glyphicons-halflings-regular.woff
-│   └─ glyphicons-halflings-regular.woff2
+│  ├─ bootstrap.css
+│  └─ bootstrap.min.css
 └─ js/
-		 ├─ bootstrap.js
-		 └─ bootstrap.min.js
+    ├─ bootstrap.bundle.js
+    ├─ bootstrap.bundle.min.js
+    ├─ bootstrap.js
+    └─ bootstrap.min.js
 ```
 
 ### Basic Template
@@ -123,8 +121,8 @@ Bootstrapをつかってウェブページを作成する際に基本となるHT
 
 ## Author of "Honoka"
 
- * windyakin ([windyakin.net](http://windyakin.net/))
+* windyakin ([@MITLicense](https://twitter.com/MITLicense))
 
-## Editor of "Rin"
+## Author of "Rin"
 
- * Hagihara Ryosuke ([Raryosu.info](http://raryosu.info/))
+* Hagihara Ryosuke ([Raryosu.info](http://raryosu.info/))

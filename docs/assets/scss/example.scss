@@ -1,255 +1,259 @@
 @charset "UTF-8";
 
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
-
+@import "bootstrap/scss/functions";
 @import "honoka/variables";
 @import "bootstrap/scss/mixins";
+@import "bootstrap/scss/buttons";
 
-$brand-rin: #f0e68c;
-$brand-twitter: #55acee;
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+// stylelint-disable
+$brand-rin:      #f0e68c;
+$brand-twitter:  #55acee;
 $brand-facebook: #3b5998;
-$brand-hatena: #178fde;
+$brand-hatena:   #178fde;
 
-.btn-twitter,.btn-facebook {
-	.fa.fa-lg {
-		margin-right: 2px;
-		vertical-align: -1px;
-	}
-}
-.btn-twitter {
-	@include button-variant(#fff, $brand-twitter, darken($brand-twitter, 2%));
-}
-.btn-facebook {
-	@include button-variant(#fff, $brand-facebook, darken($brand-facebook, 2%));
-}
-.btn-hatebu {
-	@include button-variant(#fff, $brand-hatena, darken($brand-hatena, 2%));
-}
+$brand-colors: ();
+$brand-colors: map-merge((
+  "honoka":   $brand-rin,
+  "twitter":  $brand-twitter,
+  "facebook": $brand-facebook,
+  "hatena":   $brand-hatena
+), $brand-colors);
+// stylelint-enable
 
-.fa.fa-hatebu::before {
-	font-family: Verdana;
-	font-weight: bold;
-	content: "B!";
+@each $color, $value in $brand-colors {
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+    color: #fff;
+  }
 }
 
-body {
-	margin-top: $navbar-padding-y * 2 + $navbar-divider-padding-y * 2 + 1rem * $line-height-base;
+.btn-twitter,
+.btn-facebook,
+.btn-hatena {
+  .fa.fa-lg {
+    vertical-align: -1px;
+  }
+}
+
+.icon.icon-hatebu::before {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.1rem;
+  content: "";
+  background-image: url("../img/hatebu.svg");
+  background-size: 100% 100%;
 }
 
 .social-button {
-	position: relative;
-	padding: $spacer-y 0;
-	margin: 0 auto !important;
-	overflow: hidden;
-	> ul {
-		position: relative;
-		left: 50%;
-		float: left;
-		padding: 0;
-		margin: 0;
-		list-style: outside none none;
-		> li {
-			position: relative;
-			left: -50%;
-			float: left;
-			padding: 0;
-			margin: 0 10px;
-			.fb-like {
-				> span {
-					vertical-align: 0 !important;
-				}
-			}
-		}
-	}
+  position: relative;
+  padding: get-maps($spacers, 2) 0;
+  margin: 0 auto;
+  overflow: hidden;
+  > ul {
+    position: relative;
+    left: 50%;
+    float: left;
+    padding: 0;
+    margin: 0;
+    list-style: outside none none;
+    > li {
+      position: relative;
+      left: -50%;
+      float: left;
+      padding: 0;
+      margin: 0 10px;
+      .fb-like > span {
+        vertical-align: 0 !important;
+      }
+    }
+  }
 }
 
 .social {
-	padding: 0.7rem 0;
-	background: $gray-lighter;
+  padding: $spacer 0;
+  background: $gray-200;
 }
 
 .jumbotron.special {
-	position: relative;
-	min-height: 530px;
-	margin-bottom: 0;
-	overflow: hidden;
-	text-align: center;
-	background-color: $brand-rin;
-	background-image: url("../img/circle.png");
-	background-repeat: no-repeat;
-	background-position: -35% center;
-	background-size: 70%;
-	.honoka {
-		position: absolute;
-		bottom: -20px;
-		left: 0;
-		width: 400px;
-		height: 530px;
-	}
-	.outline {
-		margin-top: 180px;
-	}
-	h1,
-	.h1 {
-		font-family: Montserrat, sans-serif;
-	}
-	.download {
-		margin: 1.5rem auto (1.5rem * 0.5);
-	}
-	.basedon {
-		margin: (1.5rem * 0.5) auto;
-		color: $gray-light;
-		text-shadow: #fff 0 1px 2px;
-	}
+  position: relative;
+  min-height: 530px;
+  margin-bottom: 0;
+  overflow: hidden;
+  text-align: center;
+  background-color: $brand-rin;
+  background-image: url("../img/circle.png");
+  background-repeat: no-repeat;
+  background-position: -35% center;
+  background-size: 70%;
+  .honoka {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 400px;
+    height: 530px;
+  }
+  .outline {
+    margin-top: 180px;
+  }
+  .copy {
+    font-weight: $font-weight-bold;
+    @include media-breakpoint-down(sm) {
+      font-size: $h1-font-size;
+    }
+  }
+  .download {
+    margin: map-get($spacers, 3) auto map-get($spacers, 2);
+  }
+  .basedon {
+    margin: map-get($spacers, 2) auto;
+    color: $gray-600;
+    text-shadow: #fff 0 1px 2px;
+  }
 }
 
-
-
-section.section {
-	padding: (0.7rem * 10) 0;
-	&.section-default {
-		background-color: $body-bg;
-	}
-	&.section-inverse {
-		background-color: lighten($brand-rin, 15%);
-	}
-	.subtitle {
-		margin-bottom: 1.5rem;
-		text-align: center;
-		h2 {
-			margin-top: 0;
-		}
-	}
+.section {
+  padding: ($spacer * 10) 0;
+  &.section-default {
+    background-color: $body-bg;
+  }
+  &.section-inverse {
+    background-color: lighten($brand-rin, 15%);
+  }
+  .subtitle {
+    margin-bottom: $spacer;
+    text-align: center;
+    h2 {
+      margin-top: 0;
+    }
+  }
 }
 
 .point {
-	.point-box {
-		text-align: center;
-		.point-circle {
-			$point-circle-size: 100px;
-			width: $point-circle-size;
-			height: $point-circle-size;
-			margin: 0 auto;
-			font-size: $point-circle-size * 0.6;
-			line-height: $point-circle-size;
-			color: #fff;
-			border-radius: 100%;
-			&.start {
-				background-color: $brand-success;
-			}
-			&.replace {
-				background-color: $brand-warning;
-			}
-			&.compass {
-				background-color: $brand-primary;
-			}
-			&.japanese {
-				background-color: $brand-danger;
-				span.icon-jp::before {
-					font-weight: bold;
-					content: "あ";
-				}
-			}
-		}
-		.point-description {
-			h4 {
-				margin-top: $spacer-y;
-				text-align: center;
-			}
-			p {
-				text-align: justify;
-			}
-		}
-	}
+  .point-box {
+    text-align: center;
+    .point-circle {
+      $point-circle-size: 100px;
+      width: $point-circle-size;
+      height: $point-circle-size;
+      margin: 0 auto;
+      font-size: $point-circle-size * .6;
+      line-height: $point-circle-size;
+      color: #fff;
+      border-radius: 100%;
+      &.start {
+        background-color: $success;
+      }
+      &.replace {
+        background-color: $warning;
+      }
+      &.compass {
+        background-color: $primary;
+      }
+      &.japanese {
+        background-color: $danger;
+      }
+    }
+    .point-description {
+      h4 {
+        margin-top: $spacer;
+        text-align: center;
+      }
+      p {
+        text-align: justify;
+      }
+    }
+  }
+}
+
+.icon-jp::before {
+  font-weight: 700;
+  content: "あ";
 }
 
 .getting-started {
-	h3 {
-		margin-top: 0;
-	}
+  h3 {
+    margin-top: 0;
+  }
 }
 
 .japanese-font {
-	.well {
-		> h3 {
-			margin-top: 1.5rem;
-		}
-	}
+  .well {
+    > h3 {
+      margin-top: $spacer;
+    }
+  }
 }
 
-.available-bower {
-	position: relative;
-	overflow: hidden;
-	.bower-logo {
-		position: absolute;
-		right: 40px;
-		bottom: 0;
-		width: 300px;
-		height: 300px;
-		background-image: url("../img/bower-logo.png");
-		background-repeat: no-repeat;
-		background-position: center center;
-		background-size: contain;
-		opacity: 0.3;
-	}
+h3 .package-system-logo {
+  width: auto;
+  height: $h3-font-size * 2;
+  font-size: $h3-font-size * 2;
+  line-height: $h3-font-size * 2;
 }
 
 .featured {
-	.subtitle {
-		h2 {
-			font-size: $font-size-h3;
-		}
-	}
-	ul.featured-list {
-		a {
-			opacity: 0.7;
-			&:hover, &:active, &:focus {
-				opacity: 0.5;
-			}
-		}
-		li {
-			padding: 1.4rem 3rem;
-		}
-	}
+  .subtitle {
+    h2 {
+      font-size: $h3-font-size;
+    }
+  }
+  .featured-list {
+    a {
+      opacity: .7;
+      transition: opacity .2s;
+      &:hover,
+      &:active,
+      &:focus {
+        opacity: .5;
+      }
+    }
+    li {
+      padding: $spacer $spacer;
+    }
+  }
 }
 
-.thumbnail {
-	background: #fff;
-	> a {
-		&:hover, &:active, &:focus {
-			opacity: 0.7;
-		}
-	}
+.card {
+  > a {
+    transition: opacity .2s;
+    &:hover,
+    &:active,
+    &:focus {
+      opacity: .7;
+    }
+  }
 }
 
 footer {
-	padding: 0.7rem * 4 0;
-	color: $gray-lighter;
-	background-color: $gray-dark;
-	.copyright {
-		padding-top: 0.7rem;
-		padding-bottom: 0.7rem;
-	}
+  padding: $spacer * 4 0;
+  color: $gray-200;
+  background-color: $gray-800;
+  .copyright {
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+  }
 }
 
 .bootstrap-default {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	line-height: 1.4285;
-	> h3 {
-		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size: 24px;
-	}
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4285;
+  > h3 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+  }
 }
 
 .v4-pre {
-	display: block;
-	padding: 15px 20px;
-	font-weight: 700;
-	color: #fff;
-	text-align: center;
-	background-color: #0275d8;
-	&:hover {
-		color: #fff;
-	}
+  display: block;
+  padding: 15px 20px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  background-color: #0275d8;
+  &:hover {
+    color: #fff;
+  }
 }
