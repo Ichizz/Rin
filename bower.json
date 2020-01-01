@@ -11,7 +11,8 @@
     "front-end",
     "framework",
     "web",
-    "lovelive"
+    "lovelive",
+    "honoka"
   ],
   "authors": [
     "Hagihara Ryosuke <me@raryosu.info>"
@@ -27,23 +28,20 @@
     "dist/css/bootstrap.min.css"
   ],
   "ignore": [
+    "build",
+    "docs",
+    "scss",
     "/.*",
-    "dist/assets",
-    "dist/*.html",
-    "src",
+    "appveyor.yml",
     "CNAME"
   ],
   "dependencies": {},
   "devDependencies": {
-    "bootstrap": "3.3.7",
-    "bootstrap-sass": "3.3.7"
+    "bootstrap": "4.1.0"
   },
   "exportsOverride": {
-    "bootstrap-sass": {},
-    "bootstrap": {
-      "js": "dist/js/bootstrap.**js",
-      "fonts": "dist/fonts/**/*"
-    },
-    "jquery": {}
+    "bootstrap": {},
+    "jquery": {},
+    "tether": {}
   }
 }
