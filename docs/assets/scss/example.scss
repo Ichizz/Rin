@@ -11,14 +11,14 @@
 // @import "honoka/mixins";
 
 // stylelint-disable
-$brand-honoka:   #ff9800;
+$brand-rin:      #f0e68c;
 $brand-twitter:  #55acee;
 $brand-facebook: #3b5998;
 $brand-hatena:   #178fde;
 
 $brand-colors: ();
 $brand-colors: map-merge((
-  "honoka":   $brand-honoka,
+  "honoka":   $brand-rin,
   "twitter":  $brand-twitter,
   "facebook": $brand-facebook,
   "hatena":   $brand-hatena
@@ -84,7 +84,7 @@ $brand-colors: map-merge((
   min-height: 530px;
   margin-bottom: 0;
   overflow: hidden;
-  background-color: lighten($brand-honoka, 30%);
+  background-color: $brand-rin;
   background-image: url("../img/circle.png");
   background-repeat: no-repeat;
   background-position: -35% center;
@@ -123,7 +123,7 @@ $brand-colors: map-merge((
     background-color: $body-bg;
   }
   &.section-inverse {
-    background-color: lighten($brand-honoka, 45%);
+    background-color: lighten($brand-rin, 10%);
   }
   .subtitle {
     margin-bottom: $spacer;

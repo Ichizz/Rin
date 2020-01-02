@@ -624,37 +624,37 @@ input[type="button"].btn-block {
 
 .btn-honoka {
   color: #212529;
-  background-color: #ff9800;
-  border-color: #ff9800;
+  background-color: #f0e68c;
+  border-color: #f0e68c;
   color: #fff;
 }
 
 .btn-honoka:hover {
-  color: #fff;
-  background-color: #d98100;
-  border-color: #cc7a00;
+  color: #212529;
+  background-color: #ecdf6a;
+  border-color: #eadc5f;
 }
 
 .btn-honoka:focus, .btn-honoka.focus {
-  box-shadow: 0 0 0 0.2rem rgba(222, 135, 6, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(209, 201, 125, 0.5);
 }
 
 .btn-honoka.disabled, .btn-honoka:disabled {
   color: #212529;
-  background-color: #ff9800;
-  border-color: #ff9800;
+  background-color: #f0e68c;
+  border-color: #f0e68c;
 }
 
 .btn-honoka:not(:disabled):not(.disabled):active, .btn-honoka:not(:disabled):not(.disabled).active,
 .show > .btn-honoka.dropdown-toggle {
-  color: #fff;
-  background-color: #cc7a00;
-  border-color: #bf7200;
+  color: #212529;
+  background-color: #eadc5f;
+  border-color: #e9da54;
 }
 
 .btn-honoka:not(:disabled):not(.disabled):active:focus, .btn-honoka:not(:disabled):not(.disabled).active:focus,
 .show > .btn-honoka.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(222, 135, 6, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(209, 201, 125, 0.5);
 }
 
 .btn-twitter {
@@ -815,7 +815,7 @@ input[type="button"].btn-block {
   min-height: 530px;
   margin-bottom: 0;
   overflow: hidden;
-  background-color: #ffd699;
+  background-color: #f0e68c;
   background-image: url("../img/circle.png");
   background-repeat: no-repeat;
   background-position: -35% center;
@@ -865,7 +865,7 @@ input[type="button"].btn-block {
 }
 
 .section.section-inverse {
-  background-color: #fff5e6;
+  background-color: #f6f0b9;
 }
 
 .section .subtitle {
