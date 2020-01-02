@@ -833,7 +833,12 @@ input[type="button"].btn-block {
 }
 
 .jumbotron.special .outline {
-  position: relative;
+  margin-top: 150px;
+}
+
+.jumbotron.special .outline h1 {
+  font-size: 3.25rem;
+  font-family: Montserrat, sans-serif;
 }
 
 .jumbotron.special .copy {
